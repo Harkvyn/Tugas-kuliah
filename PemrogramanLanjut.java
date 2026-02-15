@@ -4,11 +4,11 @@ public class App {
     public static void main(String[] args) {
     bujurSangkar bujursangkar = new bujurSangkar(3);
         bujursangkar.info();
-        System.out.println("Luas bujur sangkar: " + bujursangkar.luas());
+        System.out.println("Luas bujur sangka: r: " + bujursangkar.luas());
 
         lingkaran Lingkaran = new lingkaran(3);
         Lingkaran.info();
-        System.out.println("Luas lingkaran" + Lingkaran.luas());    
+        System.out.println("Luas lingkaran: " + Lingkaran.luas());    
         
     }
 }
@@ -26,7 +26,9 @@ class bidangDuaDimensi {
         System.out.println(this.nama);
     }
     
-        int luas();
+    int luas(){
+        return 0;
+    }
     
     
 }
@@ -35,7 +37,7 @@ class bidangDuaDimensi {
         private int sisi;
 
         bujurSangkar(int sisi) {
-            super("Bujur Sangkar")
+            super("Bujur Sangkar");
             this.sisi = sisi;
         }
 
@@ -52,7 +54,7 @@ class bidangDuaDimensi {
             this.jari = jari;
         }
         int luas() {
-        return 3.14 * jari * jari;
+        return (int)(3.14 * jari * jari);
         }
         
     }
