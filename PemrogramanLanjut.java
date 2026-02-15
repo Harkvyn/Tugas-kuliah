@@ -4,7 +4,7 @@ public class App {
     public static void main(String[] args) {
     bujurSangkar bujursangkar = new bujurSangkar(3);
         bujursangkar.info();
-        System.out.println("Luas bujur sangka: r: " + bujursangkar.luas());
+        System.out.println("Luas bujur sangkar: " + bujursangkar.luas());
 
         lingkaran Lingkaran = new lingkaran(3);
         Lingkaran.info();
