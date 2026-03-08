@@ -15,9 +15,11 @@ class buku {
   String judul;
   int ID;
   String kategori;
-  buku(String judul, int ID, String kategori) {
+  String penulis;
+  buku(String judul, int ID, String kategori, String penulis) {
     this.judul = judul;
     this.ID = ID;
     this.kategori = kategori;
+    this.penulis = penulis;
   }
 }
