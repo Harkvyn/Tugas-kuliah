@@ -1,68 +1,111 @@
 package Perpustakaan;
 import java.util.*;
 
+class kategori {
+    String nama;
+    buku[] daftarBuku;
+
+    kategori(String nama, buku[] daftarBuku) {
+        this.nama = nama;
+        this.daftarBuku = daftarBuku;
+    }
+}
+
+
+class buku {
+    String judul;
+    int id;
+    String kategori;
+    String[] penulis;
+    buku(String judul, int id, String kategori, String... penulis) {
+        this.judul = judul;
+        this.id = id;
+        this.kategori = kategori;
+        this.penulis = penulis;
+    }
+
+    void tampilkanInfo() {
+        System.out.println("ID      : " + id);
+        System.out.println("Judul   : " + judul);
+        System.out.print("Penulis : ");
+        for (int i = 0; i < penulis.length; i++) {
+            System.out.print(penulis[i]);
+            if (i < penulis.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+        System.out.println("---------------------------");
+    }
+}
+
+
 class main {
   public static void main(String[] args) {
-  buku[] buku_teknologi = new buku[5];
-  buku[] buku_filsafat = new buku[5];
-  buku[] buku_sejarah = new buku[5];
-  buku[] buku_agama = new buku[5];
-  buku[] buku_psikologi = new buku[5];
-  buku[] buku_politik = new buku[5];
-  buku[] buku_fiksi = new buku[5];
+buku[] buku_teknologi = {
+            new buku("Apa itu handphone", 1, "Teknologi", "Hamam"),
+            new buku("Dasar AI", 2, "Teknologi", "B"),
+            new buku("Pemrograman Java", 3, "Teknologi", "C"),
+            new buku("Jaringan Komputer", 4, "Teknologi", "D"),
+            new buku("Keamanan Siber", 5, "Teknologi", "E"),
+            
+  };
 
-    
-  kategori[] teknologi = new kategori[5];
-  kategori[] filsafat = new kategori[5];
-  kategori[] sejarah = new kategori[5];
-  kategori[] agama = new kategori[5];
-  kategori[] psikologi = new kategori[5];
-  kategori[] politik = new kategori[5];
-  kategori[] fiksi = new kategori[5];
+  buku[] buku_filsafat = {
+            new buku("Dunia Sophie", 6, "Filsafat", "F"),
+            new buku("Madilog", 7, "Filsafat", "G"),
+            new buku("Republik", 8, "Filsafat", "H"),
+            new buku("Etika Nikomakea", 9, "Filsafat", "I"),
+            new buku("Fenomenologi Roh", 10, "Filsafat", "J")
+  };
+  buku[] buku_sejarah =  {
+            new buku("sejarah1", 6, "Sejarah", "k"),
+            new buku("sejarah2", 7, "Sejarah", "l"),
+            new buku("sejarah3", 8, "Sejarah", "m"),
+            new buku("sejarah4", 9, "Sejarah", "N"),
+            new buku("sejarah5", 10, "Sejarah", "O")
+  };
+  buku[] buku_agama =  {
+            new buku("AGAMA1", 6, "Agama", "P"),
+            new buku("AGAMA2", 7, "Agama", "Q"),
+            new buku("AGAMA3", 8, "Agama", "R"),
+            new buku("AGAMA4", 9, "Agama", "S"),
+            new buku("AGAMA5", 10, "Agama", "T")
+  };
+  buku[] buku_psikologi = {
+            new buku("psiko1", 6, "psikologi", "U"),
+            new buku("psiko2", 7, "psikologi", "V"),
+            new buku("psiko3", 8, "psikologi", "W"),
+            new buku("psiko4", 9, "psikologi", "X"),
+            new buku("psiko5", 10, "psikologi", "Y")
+  }; 
+  buku[] buku_politik = {
+            new buku("politik1", 6, "politik", "Z"),
+            new buku("politik2", 7, "politik", "AA"),
+            new buku("politik3", 8, "politik", "BB"),
+            new buku("politik4", 9, "politik", "CC"),
+            new buku("politik5", 10, "politik", "DD")
 
+  } ; 
+  buku[] buku_fiksi = {
+            new buku("fiksi1", 6, "fiksi", "EE"),
+            new buku("fiksi2", 7, "fiksi", "FF"),
+            new buku("fiksi3", 8, "fiksi", "GG"),
+            new buku("fiksi4", 9, "fiksi", "HH"),
+            new buku("fiksi5", 10, "fiksi", "II")
+  } ; 
 
-  teknologi[0] = buku("Apa itu handphone", 1, "teknologi");
-  teknologi[1] = buku("Dasar-Dasar AI", 2, "teknologi");
-  teknologi[2] = buku("Pemrograman Java", 3, "teknologi");
-  teknologi[3] = buku("Jaringan Komputer", 4, "teknologi");
-  teknologi[4] = buku("Keamanan Siber", 5, "teknologi");
+        kategori teknologi = new kategori("Teknologi", buku_teknologi);
+        kategori filsafat  = new kategori("Filsafat", buku_filsafat);
+        kategori sejarah   = new kategori("Sejarah", buku_sejarah);
+        kategori agama     = new kategori("Agama", buku_agama);
+        kategori psikologi = new kategori("Psikologi", buku_psikologi);
+        kategori politik   = new kategori("Politik", buku_politik); // Tambahkan politik
+        kategori fiksi     = new kategori("Fiksi", buku_fiksi);
 
-
-  filsafat[0] = buku("Dunia Sophie", 6, "filsafat");
-  filsafat[1] = buku("Madilog", 7, "filsafat");
-  filsafat[2] = buku("Republik", 8, "filsafat");
-  filsafat[3] = buku("Etika Nikomakea", 9, "filsafat");
-  filsafat[4] = buku("Fenomenologi Roh", 10, "filsafat");
-
-  sejarah[0] = buku("Sapiens", 11, "sejarah");
-  sejarah[1] = buku("Sejarah Dunia yang Disembunyikan", 12, "sejarah");
-  sejarah[2] = buku("Guns, Germs, and Steel", 13, "sejarah");
-  sejarah[3] = buku("Nusantara", 14, "sejarah");
-  sejarah[4] = buku("Revolusi Prancis", 15, "sejarah");
-
-  agama[0] = buku("Pelajaran Tauhid", 16, "agama");
-  agama[1] = buku("Sejarah Pemikiran Islam", 17, "agama");
-  agama[2] = buku("Perbandingan Agama", 18, "agama");
-  agama[3] = buku("Filsafat Ketuhanan", 19, "agama");
-  agama[4] = buku("Sosiologi Agama", 20, "agama");
-
-  psikologi[0] = buku("Man's Search for Meaning", 21, "psikologi");
-  psikologi[1] = buku("Thinking, Fast and Slow", 22, "psikologi");
-  psikologi[2] = buku("Psikologi Kepribadian", 23, "psikologi");
-  psikologi[3] = buku("The Interpretation of Dreams", 24, "psikologi");
-  psikologi[4] = buku("Emotional Intelligence", 25, "psikologi");
-
-  politik[0] = buku("The Prince", 26, "politik");
-  politik[1] = buku("Das Kapital", 27, "politik");
-  politik[2] = buku("Kontrak Sosial", 28, "politik");
-  politik[3] = buku("Teori Demokrasi", 29, "politik");
-  politik[4] = buku("Geopolitik Dunia", 30, "politik");
-
-  
-  fiksi[0] = buku("Laskar Pelangi", 31, "fiksi");
-  fiksi[1] = buku("Bumi Manusia", 32, "fiksi");
-  fiksi[2] = buku("Harry Potter", 33, "fiksi");
-  fiksi[3] = buku("The Great Gatsby", 34, "fiksi");
-  fiksi[4] = buku("Rumah Kaca", 35, "fiksi");
+  for (int i = 0; i < teknologi.daftarBuku.length; i++) {
+            teknologi.daftarBuku[i].tampilkanInfo();
+        }
   }
 }
+
